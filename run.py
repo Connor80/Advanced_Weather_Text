@@ -16,9 +16,9 @@ def WeatherText():
     z = False
     while not y and not z:
         resp.message(initial_Welcome)
-        if r.lower() == 'atlanta':
+        if body.lower() == 'atlanta':
             y = True   
-        elif r.lower() == 'dallas':
+        elif body.lower() == 'dallas':
             z = True        
 
         while y is True:
