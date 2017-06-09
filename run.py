@@ -19,7 +19,9 @@ def WeatherText():
         if body.lower() == 'atlanta':
             y = True   
         elif body.lower() == 'dallas':
-            z = True        
+            z = True
+        else:
+            resp.message(initial_Welcome)
 
         while y is True:
             resp.message(atl_Welcome)
@@ -37,9 +39,11 @@ def WeatherText():
                 resp.message(atl_allText)
             elif body.lower() == 'back':
                 y = False
+            else:
+                resp.message(initial_Welcome)
 
         while z is True:
-             resp.message(dal_Welcome)
+            resp.message(dal_Welcome)
             if body.lower() == 'sunset':
                 resp.message(dal_sunsetText)
             elif body.lower() == 'moon':
@@ -54,6 +58,8 @@ def WeatherText():
                 resp.message(dal_allText)
             elif body.lower() == 'back':
                 z = False
+            else:
+                resp.message(initial_Welcome)
     
     return str(resp)
 
