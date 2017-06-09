@@ -61,7 +61,7 @@ def WeatherText():
             else:
                 resp.message(initial_Welcome)
     
-    return str(resp)
+        return str(resp)
 
 if __name__ == "__main__":
     app.run(debug=True)
