@@ -46,8 +46,8 @@ for f in dateParse:
     Date = f.getText() 
 
 # Body of SMS message to be sent
-body = "It is" + Date + ". Sunset is at " + Sunset + " and the moon will be " + Moon + "."
-print(body)
+bodyText = "It is" + Date + ". Sunset is at " + Sunset + " and the moon will be " + Moon + "."
+print(bodyText)
 
 # Generate and send SMS message. Add numbers from account.
 #message = client.messages.create(

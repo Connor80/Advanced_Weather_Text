@@ -14,8 +14,10 @@ def WeatherText():
         resp.message(sunsetText)
     elif body.lower() == 'm':
         resp.message(moonText)
+    elif body.lower() == 'summary':
+        resp.message(body)
     else:
-        resp.message("Options:\n For Sunset respond 's'\n For Moon phase and visibility respond 'm'")
+        resp.message("Options:\n For Sunset respond 's'\nFor Moon phase and visibility respond 'm'\nFor a full summary respond 'summary'")
     
     return str(resp)
 
