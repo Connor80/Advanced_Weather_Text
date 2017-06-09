@@ -1,6 +1,6 @@
 """ Wunderground API """
 from WeatherText import Date, Sunset, Moon
-import urllib
+import urllib.request
 import json
 
 
