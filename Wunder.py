@@ -22,7 +22,7 @@ windText = "The wind is %s." % (wind)
 rainText = "%s inches of rain have fallen within the last hour. %s inches total today." % (rain_1hr, rain_day)
 allText = "Humidity is at %s. The wind is %s. %s inches of rain have fallen within the last hour. %s inches total today. Sunset is at %s and the moon will be %s." % (humidity, wind, rain_1hr, rain_day, Sunset, Moon)
 
-print(allText)
+#print(allText)
 f.close()
 
 
