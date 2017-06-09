@@ -22,11 +22,13 @@ for a in sentenceParse:
 sunsetParse = soup.findAll("span", {"id":"cc-sun-set"})
 for b in sunsetParse:
     Sunset = b.string + "pm"
+    sunsetText = "Sunset is at " + Sunset + "."
 
 # Stage and Visibility of Moon
 moonParse = soup.findAll("div", {"class":"moonNorth"})
 for c in moonParse:
     Moon = c.getText().strip()
+    moonText = "The moon will be " + Moon + "."
 
 # High Temperature - not live
 highParse = soup.findAll("div", {"class":"small-6 columns"})
@@ -41,14 +43,14 @@ for e in highParse:
 # Current Time and Date
 dateParse = soup.findAll("div", {"class":"local-time"})
 for f in dateParse:
-    Date = f.getText()
+    Date = f.getText() 
 
 # Body of SMS message to be sent
 body = "It is" + Date + ". Sunset is at " + Sunset + " and the moon will be " + Moon + "."
-#print(body)
+print(body)
 
 # Generate and send SMS message. Add numbers from account.
-message = client.messages.create(
-    to="+1", 
-    from_="+1",
-    body=body)
+#message = client.messages.create(
+#    to="+1", 
+#    from_="+1",
+#    body=body)
