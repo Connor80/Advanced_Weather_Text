@@ -1,3 +1,5 @@
+""" Scrapes and parses the HTML on Wunderground """
+
 from bs4 import BeautifulSoup
 import requests
 from twilio.rest import Client
@@ -46,8 +48,8 @@ for f in dateParse:
     Date = f.getText() 
 
 # Body of SMS message to be sent
-bodyText = "It is" + Date + ". Sunset is at " + Sunset + " and the moon will be " + Moon + "."
-print(bodyText)
+#bodyText = "It is" + Date + ". Sunset is at " + Sunset + " and the moon will be " + Moon + "."
+#print(bodyText)
 
 # Generate and send SMS message. Add numbers from account.
 #message = client.messages.create(
