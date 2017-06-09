@@ -1,5 +1,5 @@
 from WeatherText import *
-from flask import Flask, request, redirect
+from flask import Flask, request as REQUEST, redirect
 from twilio.twiml.messaging_response import MessagingResponse
 
 app = Flask(__name__)
@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 def WeatherText():
     """Respond to weather inquiries via text message."""
-
+    body = REQUEST.values.get('Body', None)
     resp = MessagingResponse()
 
     if body.lower() == 's':
