@@ -1,9 +1,9 @@
 """ Wunderground API """
 from WeatherText import Date, Sunset, Moon
-import urllib#.request as request
+from urllib.request import urlopen
 import json
 
-f = urllib.request.urlopen('http://api.wunderground.com/api/625080b49667ce19/geolookup/conditions/q/TX/Dallas.json')
+f = urlopen('http://api.wunderground.com/api/625080b49667ce19/geolookup/conditions/q/TX/Dallas.json')
 json_string = f.read().decode('utf-8')
 parsed_json = json.loads(json_string)
 
@@ -22,7 +22,7 @@ windText = "The wind is %s." % (wind)
 rainText = "%s inches of rain have fallen within the last hour. %s inches total today." % (rain_1hr, rain_day)
 allText = "Humidity is at %s. The wind is %s. %s inches of rain have fallen within the last hour. %s inches total today. Sunset is at %s and the moon will be %s." % (humidity, wind, rain_1hr, rain_day, Sunset, Moon)
 
-#print(allText)
+print(allText)
 f.close()
 
 
