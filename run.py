@@ -12,20 +12,36 @@ def WeatherText():
     body = REQUEST.values.get('Body', None)
     resp = MessagingResponse()
 
-    if body.lower() == 'sunset':
-        resp.message(sunsetText)
-    elif body.lower() == 'moon':
-        resp.message(moonText)
-    elif body.lower() == 'humidity':
-        resp.message(humidityText)
-    elif body.lower() == 'wind':
-        resp.message(windText)
-    elif body.lower() == 'rain':
-        resp.message(rainText)
-    elif body.lower() == 'all':
-        resp.message(allText)
+    if body.lower() == 'atlanta':
+        resp.message(atl_Welcome)
+        if body.lower() == 'sunset':
+            resp.message(atl_sunsetText)
+        elif body.lower() == 'moon':
+            resp.message(atl_moonText)
+        elif body.lower() == 'humidity':
+            resp.message(atl_humidityText)
+        elif body.lower() == 'wind':
+            resp.message(atl_windText)
+        elif body.lower() == 'rain':
+            resp.message(atl_rainText)
+        elif body.lower() == 'all':
+            resp.message(atl_allText)
+    elif body.lower() == 'dallas':
+        resp.message(dal_Welcome)
+        if body.lower() == 'sunset':
+            resp.message(dal_sunsetText)
+        elif body.lower() == 'moon':
+            resp.message(dal_moonText)
+        elif body.lower() == 'humidity':
+            resp.message(dal_humidityText)
+        elif body.lower() == 'wind':
+            resp.message(dal_windText)
+        elif body.lower() == 'rain':
+            resp.message(dal_rainText)
+        elif body.lower() == 'all':
+            resp.message(dal_allText)
     else:
-        resp.message(Welcome)
+        resp.message(initial_Welcome)
     
     return str(resp)
 
