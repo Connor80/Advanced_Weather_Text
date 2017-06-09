@@ -3,7 +3,7 @@ from WeatherText import Date, Sunset, Moon
 import urllib.request as request
 import json
 
-f = request.urlopen('http://api.wunderground.com/api/625080b49667ce19/geolookup/conditions/q/TX/Dallas.json')
+f = urlopen('http://api.wunderground.com/api/625080b49667ce19/geolookup/conditions/q/TX/Dallas.json')
 json_string = f.read().decode('utf-8')
 parsed_json = json.loads(json_string)
 
