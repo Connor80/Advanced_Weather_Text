@@ -38,7 +38,7 @@ def WeatherText():
             elif body.lower() == 'back':
                 y = False
 
-         while z is True:
+        while z is True:
              resp.message(dal_Welcome)
             if body.lower() == 'sunset':
                 resp.message(dal_sunsetText)
