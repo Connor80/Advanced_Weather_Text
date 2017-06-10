@@ -9,12 +9,11 @@ app = Flask(__name__)
 def WeatherText():
     """Respond to weather inquiries via text message.
     Initialize with any text."""
-    body = REQUEST.values.get('Body', None)
-    resp = MessagingResponse()
-
     y = False
     z = False
     while not y and not z:
+        body = REQUEST.values.get('Body', None)
+        resp = MessagingResponse()
         resp.message(initial_Welcome)
         if body.lower() == 'atlanta':
             y = True   
