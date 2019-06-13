@@ -5,9 +5,9 @@ import requests
 from twilio.rest import Client
 
 # Account SID from twilio.com/console
-account_sid = "ACb73022b9e8b7af5fc6627e95170bd5bd"
+account_sid = app.config['account_sid']
 # Auth Token from twilio.com/console
-auth_token  = "485be409b146334f96d4e9576351a6e9"
+auth_token  = app.config['auth_token']
 
 client = Client(account_sid, auth_token)
 
@@ -48,7 +48,7 @@ for e in dal_highParse:
 # Current Time and Date
 dal_dateParse = dal_soup.findAll("div", {"class":"local-time"})
 for f in dal_dateParse:
-    dal_Date = f.getText() 
+    dal_Date = f.getText()
 
 # Body of SMS message to be sent
 #dal_bodyText = "It is" + dal_Date + ". Sunset is at " + dal_Sunset + " and the moon will be " + dal_Moon + "."
@@ -80,6 +80,6 @@ for f in atl_dateParse:
 
 # Generate and send SMS message. Add numbers from account.
 #message = client.messages.create(
-#    to="+1", 
+#    to="+1",
 #    from_="+1",
 #    body=body)
